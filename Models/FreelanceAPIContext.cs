@@ -16,5 +16,15 @@ namespace Platform_for_freelancing.Models
         {
             Database.EnsureCreated();
         }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Bid>()
+                .HasOne(b => b.Freelancer)
+                .WithMany(f => f.Bids)
+                .HasForeignKey(b => b.FreelancerId)
+                .OnDelete(DeleteBehavior.Restrict);
+        }
     }
 }

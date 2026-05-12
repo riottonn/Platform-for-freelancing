@@ -14,9 +14,9 @@ namespace Platform_for_freelancing.Models
         public string? CoverLetter { get; set; }
 
         public int OrderId { get; set; }
-        public virtual Order Order { get; set; }
+        public virtual Order? Order { get; set; }
 
         public int FreelancerId { get; set; }
-        public virtual Freelancer Freelancer { get; set; }
+        public virtual Freelancer? Freelancer { get; set; }
     }
 }

@@ -25,7 +25,7 @@ namespace Platform_for_freelancing.Models
         public decimal Budget { get; set; }
 
         public int ClientId { get; set; }
-        public virtual Client Client { get; set; }
+        public virtual Client? Client { get; set; }
 
         public virtual ICollection<Bid> Bids { get; set; }
     }
